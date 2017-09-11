@@ -12,6 +12,10 @@
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
 
     <!-- Custom styles for this template -->
     <link href="style.css" rel="stylesheet">
@@ -19,7 +23,6 @@
   </head>
 
   <body>
-
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
@@ -53,6 +56,12 @@
         <div class="container">
           <h1 class="display-1 text-white">mArS bAlLeR</h1>
           <h2 class="display-4 text-white">ball is life...</h2>
+
+<div class="text-center">
+  <button class="btn btn-warning btn-xs theme-button"><span class="glyphicon glyphicon-music"></span> Play Theme!</button>
+  <button class="btn btn-default btn-xs pause-button"><span class="glyphicon glyphicon-pause"></span> Pause Song</button>
+</div>
+
         </div>
       </div>
     </header>
@@ -119,11 +128,35 @@
       <!-- /.container -->
     </footer>
 
+
+
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper/popper.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
+    <script>
+        // JavaScript function that wraps everything
+        $(document).ready(function() {
+
+          // Gets Link for Theme Song
+          var audioElement = document.createElement("audio");
+          audioElement.setAttribute("src", "assets/patty.mp3");
+
+          // Theme Button
+          $(".theme-button").on("click", function() {
+            audioElement.play();
+          });
+
+          $(".pause-button").on("click", function() {
+            audioElement.pause();
+          });
+      });
+  </script>
+
+
   </body>
+
+
 
 </html>
